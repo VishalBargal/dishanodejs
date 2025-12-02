@@ -1,21 +1,40 @@
 const express = require("express");
-const serverless = require("serverless-http");
 const path = require("path");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const upload = require("express-fileupload");
+const cors = require("cors");
+const serverless = require("serverless-http");
 
 const app = express();
 
-// Set view engine
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(process.cwd(), "public"))); // use process.cwd()
+app.use(upload());
+app.use(cors());
+
+// Session (note: memory store will reset per request)
+app.use(
+  session({
+    key: "userId",
+    secret: "dishacomputers234",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 24 * 60 * 60 * 1000 },
+  })
+);
+
+// View engine
 app.set("views", path.join(process.cwd(), "views"));
 app.set("view engine", "ejs");
 
-// Middleware
-app.use(express.urlencoded({ extended: true }));
-
-// Root route
+// Root route - login page
 app.get("/", (req, res) => {
   res.render("admin/login.ejs");
 });
 
+// Export the serverless handler
 module.exports.handler = serverless(app);
 
 
