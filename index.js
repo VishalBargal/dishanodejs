@@ -29,8 +29,8 @@ app.use("/admin",adminpanel);
 
 
 app.get("/",(req,res)=>{
-    res.send("This is Node js Project for the Computer institution....");
-    // res.render("views/admin/login.ejs");
+    // res.send("This is Node js Project for the Computer institution....");
+    res.render("views/admin/login.ejs");
     
 })
 
