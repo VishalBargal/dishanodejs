@@ -28,11 +28,11 @@ var adminpanel=require("./routes/admin/adminpanel");
 app.use("/admin",adminpanel);
 
 
-// app.get("/",(req,res)=>{
-//     res.send("This is Node js Project for the Computer institution....");
+app.get("/",(req,res)=>{
+    res.send("This is Node js Project for the Computer institution....");
     
     
-// })
+})
 
 app.listen(1000);
 
