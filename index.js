@@ -29,8 +29,7 @@ app.use("/admin",adminpanel);
 
 
 app.get("/",(req,res)=>{
-    // res.send("done");
-    res.redirect('/admin/home');
+    res.send("done");
 })
 
 app.listen(1000);
