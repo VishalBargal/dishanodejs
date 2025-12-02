@@ -29,7 +29,9 @@ app.use("/admin",adminpanel);
 
 
 app.get("/",(req,res)=>{
-    res.send("done");
+    // res.send("done");
+    res.render("admin/login.ejs");
+    
 })
 
 app.listen(1000);
