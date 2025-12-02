@@ -29,8 +29,8 @@ app.use("/admin",adminpanel);
 
 
 app.get("/",(req,res)=>{
-    // res.send("done");
-    res.render("admin/login.ejs");
+    res.send("done");
+    // res.render("views/admin/login.ejs");
     
 })
 
