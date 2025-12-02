@@ -1,0 +1,103 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">CCC Features </h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/saveccc_features" method="post" enctype="multipart/form-data">
+           <div class="col-md-6 float-left">
+            <div class="col-md-12 mt-3 float-left">
+              <h3>Features of Typing</h3>
+               </div>
+            <div class="col-md-12 mt-3 float-left">
+                <label>Enter Title 1</label>
+                <input type="text" value="<%= ccc.cfeture1head1 %>" name="cfeture1head1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Enter Title 2</label>
+                <input type="text"  value="<%= ccc.cfeture1head2 %>"  name="cfeture1head2" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Features 1</label>
+                <input type="text"  value="<%= ccc.cfeture1p1 %>"   name="cfeture1p1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+               <label>Features 2</label>
+               <input type="text"  value="<%= ccc.cfeture1p2 %>"  name="cfeture1p2" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Features 3</label>
+              <input type="text" value="<%= ccc.cfeture1p3 %>"   name="cfeture1p3" class="form-control" >
+            </div>
+            <div class="col-md-12 mt-3 float-left">
+            <label>Features 4</label>
+            <input type="text" value="<%= ccc.cfeture1p4 %>" name="cfeture1p4" class="form-control" >
+           </div>
+           
+           <div class="col-md-12 mt-3 float-left">
+           <label>Features 5</label>
+           <input type="text" value="<%= ccc.cfeture1p5 %>"   name="cfeture1p5" class="form-control" >
+          </div>
+          <div class="col-md-12 mt-3 float-left">
+          <label>Features 6</label>
+          <input type="text" value="<%= ccc.cfeture1p6 %>"   name="cfeture1p6" class="form-control" >
+        </div>
+     </div>
+           <div class="col-md-6 float-left">
+            <div class="col-md-12 mt-3 float-left">
+                <h3>Links of typing</h3>
+                 </div>
+              <div class="col-md-12 mt-3 float-left">
+                  <label>Enter Title 1</label>
+                  <input type="text"  value="<%= ccc.cfeture2head1 %>"   name="cfeture2head1" class="form-control" >
+                 </div>
+                 <div class="col-md-12 mt-3 float-left">
+                  <label>Enter Title 2</label>
+                  <input type="text"    value="<%= ccc.cfeture2head2 %>"   name="cfeture2head2" class="form-control" >
+                 </div>
+                 <div class="col-md-12 mt-3 float-left">
+                  <label>Link 1</label>
+                  <input type="text"  value="<%= ccc.cfeture2p1 %>"   name="cfeture2p1" class="form-control" >
+                 </div>
+                 <div class="col-md-12 mt-3 float-left">
+                 <label>Link 2</label>
+                 <input type="text"  value="<%= ccc.cfeture2p2 %>" name="cfeture2p2" class="form-control" >
+                </div>
+                <div class="col-md-12 mt-3 float-left">
+                <label>Link 3</label>
+                <input type="text"  value="<%= ccc.cfeture2p3 %>"  name="cfeture2p3" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Link 4</label>
+              <input type="text"  value="<%= ccc.cfeture2p4 %>"   name="cfeture2p4" class="form-control" >
+             </div>
+             <div class="col-md-12 mt-3 float-left">
+             <label>Link 5</label>
+             <input type="text"   value="<%= ccc.cfeture2p5 %>"   name="cfeture2p5" class="form-control" >
+            </div>
+            <div class="col-md-12 mt-3 float-left">
+            <label>Link 6</label>
+            <input type="text" value="<%= ccc.cfeture2p6 %>"    name="cfeture2p6" class="form-control" >
+            <input type="hidden" value="<%= ccc.ccc_features_id %>"    name="ccc_features_id"  >
+
+
+          </div>
+           </div>
+
+               
+           
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

@@ -1,0 +1,80 @@
+
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Top Banar Page Open</h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/abcsccon_banar" method="post" enctype="multipart/form-data">
+           
+               <div class="col-md-6 mt-3 float-left">
+                <label>About Title 1</label>
+                <input type="text" value="<%= users.abtitle1 %>"   name="abtitle1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>About Title 2</label>
+                <input type="text"   value="<%= users.abtitle2 %>"   name="abtitle2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>About Image</label>
+                <input type="file" accept="images/*" name="abimg1" class="form-control">
+              </div>
+              <div class="col-md-6 mt-3 float-left">
+                <img src="/uploads/<%= users.cli_img1 %>" height="100px" width="100px">
+              </div>
+
+
+              <div class="col-md-6 mt-3 float-left">
+                <label>CSC Title 1</label>
+                <input type="text" value="<%= users.csctitle1 %>"    name="csctitle1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>CSC Title 2</label>
+                <input type="text"  value="<%= users.csctitle2 %>"    name="csctitle2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>CSC Banar Image</label>
+                <input type="file" accept="images/*" name="cscimg2" class="form-control">
+              </div>
+              <div class="col-md-6 mt-3 float-left">
+                <img src="/uploads/<%= users.cli_img2 %>" height="100px" width="100px">
+              </div>
+
+
+
+              <div class="col-md-6 mt-3 float-left">
+                <label>Contact Title 1</label>
+                <input type="text"  value="<%= users.contitle1 %>"   name="contitle1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Contact Title 2</label>
+                <input type="text"  value="<%= users.contitle2 %>"   name="contitle2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Conatct Banar Image</label>
+                <input type="file" accept="images/*" name="conimg3" class="form-control">
+              </div>
+              <div class="col-md-6 mt-3 float-left">
+                <img src="/uploads/<%= users.cli_img3 %>" height="100px" width="100px">
+                <input type="hidden"  value="<%= users.all_topbar_id %>"   name="all_topbar_id" class="form-control" >
+
+              </div>
+
+
+       
+
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

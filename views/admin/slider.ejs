@@ -1,0 +1,128 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Slider</h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="row mt-4">
+        <form action="/admin/saveslider" method="post" enctype="multipart/form-data">
+        <div class="col-md-6 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page First</h4>
+        </div>
+        <div class="col-md-6 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page Second</h4>
+        </div>
+        <div class="col-md-6 float-left text-center mt-4">
+          <label>Select Image</label>  
+          <input type="file" name="fsimg" accept="images/*" class="form-control" required>
+        </div>
+        <div class="col-md-6 float-left text-center mt-4">
+            <label>Select Image</label>  
+            <input type="file" name="ssimg" accept="images/*" class="form-control" required>
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" name="ftitle" class="form-control" required>
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" name="stitle" class="form-control" required>
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title Last Hilighted Word</label>  
+            <input type="text" name="fhword" class="form-control" required>
+          </div>
+         
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title Last Hilighted Word</label>  
+            <input type="text" name="shword" class="form-control" required>
+          </div>
+        
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter First Page Discription</label>  
+            <input type="text" name="fdisc" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter Second Page Discription</label>  
+            <input type="text" name="sdisc" class="form-control" required>
+          </div>
+          <div class="col-md-3 float-left text-center mt-4">
+            <label>Enter Button Name Page 1</label>  
+            <input type="text" name="fbut" class="form-control" required>
+          </div>
+          <div class="col-md-3 float-left text-center mt-4">
+            <label>Enter Button Name Page 1</label>  
+            <input type="text" name="f1but" class="form-control" required>
+          </div>
+          <div class="col-md-3 float-left text-center mt-4">
+            <label>Enter Button Name Page 2</label>  
+            <input type="text" name="sbut" class="form-control" required>
+          </div>
+          <div class="col-md-3 float-left text-center mt-4">
+            <label>Enter Button Name Page 2</label>  
+            <input type="text" name="s1but" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <button class="btn btn-primary  ">Save Slider</button>
+          </div>
+    </form>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           
+            <table class="table table-bordered table-hover table-striped">
+               <tr class="text-dark">
+                <th>Action</th>
+                <th>Sr.No.</th>
+                <th>Fh_word</th>
+                <th>Sh_word</th>
+                <th>F_tile</th>
+                <th>S_title</th>
+                <th>F_disc</th>
+                <th>S_disc</th>
+                <th>F1_btn</th>
+                <th>F2_btn</th>
+                <th>S2_btn</th>
+                <th>S2_btn</th>
+                <th>F_img</th>
+               </tr>
+
+     <% for(i=0;i<sli_data.length;i++) { %>
+        <tr class="text-dark">
+            <td>
+                <a href="/admin/edit_slider?home_slider_id=<%= sli_data[i].home_slider_id %>"><i class="fa fa-edit btn btn-primary"></i></a>
+                <a href="/admin/delete_slider?home_slider_id=<%= sli_data[i].home_slider_id %>"><i class="fa fa-trash btn btn-danger"></i></a>
+            </td>
+            <td><%= i+1 %></td>
+            <td><%= sli_data[i].fhword %></td>
+            <td><%= sli_data[i].shword %></td>
+            <td><%= sli_data[i].ftitle %></td>
+            <td><%= sli_data[i].stitle %></td>
+            <td><%= sli_data[i].fdisc %></td>
+            <td><%= sli_data[i].sdisc %></td>
+            <td><%= sli_data[i].fbut %></td>
+            <td><%= sli_data[i].f1but %></td>
+            <td><%= sli_data[i].sbut %></td>
+            <td><%= sli_data[i].s1but %></td>
+            <td>
+                page 1
+                <img src="/uploads/<%= sli_data[i].sli_img %>" height="100px" width="100px"><br>
+                page2
+                <img src="/uploads/<%= sli_data[i].sli_img1 %>" height="100px" width="100px">
+
+            </td>
+        </tr>
+    
+      <% } %>
+
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>     

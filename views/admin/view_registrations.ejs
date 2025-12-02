@@ -1,0 +1,43 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Registrations </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-bordered table-hover text-center text-dark ">
+                <tr class="bg-success">
+                    <td>Sr.No. / Action</td>
+                    <td>Name</td>
+                    <td>E-mail</td>
+                    <td>Registration Date</td>
+                </tr>
+            <% for(i=0;i<users.length;i++) { %>
+                <tr>
+                    <td>
+                        <%= i+1 %>
+
+                        <a href="/admin/delete_users?user_id=<%= users[i].user_id %>">
+                            <button class="btn btn-danger btn-sm ml-5"><i class="fa fa-trash"></i></button>
+                        </a>
+                    </td>
+                    <td>
+                        <%= users[i].username %>
+                    </td>
+                    <td>
+                        <%= users[i].email %>
+                    </td>
+                    <td>
+                        <%= users[i].date %>
+                    </td>
+                </tr>
+            <% } %>
+            </table>
+        </div>
+    </div>
+</div>	
+<%- include('footer.ejs') %>     

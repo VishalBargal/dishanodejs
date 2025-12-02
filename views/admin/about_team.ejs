@@ -1,0 +1,66 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Our Team</h1>
+        </div>
+    </div>
+</div>  
+
+  
+<div class="container">
+    <div class="row mt-4">
+        <form action="/admin/saveabout_slider" method="post" enctype="multipart/form-data">
+            <input type="hidden" value="<%= team.about_team_id %>"  name="about_team_id" class="form-control">
+        <div class="col-md-6 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page First</h4>
+        </div>
+        <div class="col-md-6 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page Second</h4>
+        </div>
+        <div class="col-md-6 float-left text-center mt-4">
+          <label>Select Image</label>  
+          <input type="file" name="fsimg" accept="images/*" class="form-control" >
+          <img src="/uploads/<%= team.sli_img %>" height="100px" width="100px">
+
+        </div>
+        <div class="col-md-6 float-left text-center mt-4">
+            <label>Select Image</label>  
+            <input type="file" name="ssimg" accept="images/*" class="form-control">
+          <img src="/uploads/<%= team.sli_img1 %>" height="100px" width="100px">
+
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" value="<%= team.ftitle %>"  name="ftitle" class="form-control" required>
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" value="<%= team.stitle %>"  name="stitle" class="form-control" required>
+          </div>
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Main Title</label>  
+            <input type="text" value="<%= team.mtitle1 %>"  name="mtitle1" class="form-control" required>
+          </div>
+         
+          <div class="col-md-6 float-left text-center mt-4">
+            <label>Enter Main Title</label>  
+            <input type="text" value="<%= team.mtitle2 %>"  name="mtitle2" class="form-control" required>
+          </div>
+        
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter First Page Discription</label>  
+            <input type="text" value="<%= team.fdisc %>"  name="fdisc" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter Second Page Discription</label>  
+            <input type="text" value="<%= team.sdisc %>"  name="sdisc" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <button class="btn btn-primary  ">Update Team</button>
+          </div>
+    </form>
+    </div>
+</div>
+<%- include('footer.ejs') %>     
+

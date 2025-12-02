@@ -1,0 +1,173 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">About Disha </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+  
+        <form action="/admin/save_about_disha/" method="post" enctype="multipart/form-data">
+         <div class="row">
+                <div class="col-md-4 mt-3 float-left">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="ad_img" class="form-control">
+                </div>
+                <div class="col-md-4 mt-3 float-left">
+                <label>Enter Experience</label>
+                <input type="text"  name="experience" class="form-control">
+                </div>
+                <div class="col-md-4 mt-3 float-left">
+                <label>Enter Word</label>
+                <input type="text" name="exp_word" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Top-Title</label>
+                <input type="text" name="ttitle" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Title</label>
+                <input type="text" name="title" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Title Last H-Word</label>
+                <input type="text" name="h_word" class="form-control">
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Enter Discription</label>
+                <textarea rows="3" name="disc" class="form-control"></textarea>
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 name</label>
+                <input type="text" name="pro1_name" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 Value</label>
+                <input type="int" name="pro1_value" maxlength="2" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 color</label>
+                <input type="color" name="pro1_color" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 name</label>
+                <input type="text" name="pro2_name" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 Value</label>
+                <input type="int" name="pro2_value" maxlength="2" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 color</label>
+                <input type="color" name="pro2_color" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 name</label>
+                <input type="text" name="pro3_name" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 Value</label>
+                <input type="int" name="pro3_value" maxlength="2" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 color</label>
+                <input type="color" name="pro3_color" class="form-control">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 4 name</label>
+                <input type="text" name="pro4_name" class="form-control">
+               </div>
+               <div class="col-md-4 mt-4 float-left">
+                <label>Progress 4 Value</label>
+                <input type="int" name="pro4_value" maxlength="2" class="form-control">
+               </div>
+               <div class="col-md-4 mt-4 float-left">
+                <label>Progress 4 color</label>
+                <input type="color" name="pro4_color" class="form-control">
+               </div>
+               <div class="col-md-12 text-right mt-4 mb-4">
+                <button class="btn btn-primary ">Save About Disha</button>
+               </div>
+         </div>
+        </form>      
+</div>	 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>About Disha</h1>
+                <table class="table table-bordered table-hover table-striped text-dark">
+                 <tr class="bg-success">
+                    <th>Action</th>
+                    <th>Sr no.</th>
+                    <th>Exp</th>
+                    <th>E-word</th>
+                    <th>Et-title</th>
+                    <th>Title</th>
+                    <th>Ht-word</th>
+                    <th>Disc</th>
+                    <th>P1-Name</th>
+                    <th>P1-Value</th> 
+                 </tr>
+                 <% for(i=0;i<ad_disha.length;i++) { %> 
+                    <tr>
+                        <td>
+                            <a href="/admin/edit_ad_about?about_disha_id=<%= ad_disha[i].about_disha_id %>">
+                                <button class="tbn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                            </a>
+                            <a href="/admin/delete_ad_about?about_disha_id=<%= ad_disha[i].about_disha_id %>">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            </a>
+                        </td>
+                        <td><%= i+1 %></td>
+                        <td><%= ad_disha[i].experience %></td>
+                        <td><%= ad_disha[i].exp_word %></td>
+                        <td><%= ad_disha[i].ttitle %></td>
+                        <td><%= ad_disha[i].title %></td>
+                        <td><%= ad_disha[i].h_word %></td>
+                        <td><%= ad_disha[i].disc %></td>
+                        <td><%= ad_disha[i].pro1_name %></td>
+                        <td><%= ad_disha[i].pro1_value %></td>
+                     </tr>
+                 <% } %>
+                </table>
+        </div>
+        <div class="col-md-12">
+            
+            <table class="table table-bordered table-hover table-striped text-dark">
+             <tr class="bg-success">
+                <th>P1-color</th>
+                <th>P2-Name</th>
+                <th>P2-Value</th>
+                <th>P2-color</th>
+                <th>P3-Name</th>
+                <th>P3-Value</th>
+                <th>P3-color</th>
+                <th>P4-Name</th>
+                <th>P4-Value</th>
+                <th>P4-color</th>
+                <th>Img</th>
+             </tr>
+            
+            <% for(i=0;i<ad_disha.length;i++) { %> 
+                <tr>
+                
+                    <td><%= ad_disha[i].pro1_color %></td>
+                    <td><%= ad_disha[i].pro2_name %></td>
+                    <td><%= ad_disha[i].pro2_value %></td>
+                    <td><%= ad_disha[i].pro2_color %></td>
+                    <td><%= ad_disha[i].pro3_name %></td>
+                    <td><%= ad_disha[i].pro3_value %></td>
+                    <td><%= ad_disha[i].pro3_color %></td>
+                    <td><%= ad_disha[i].pro4_name %></td>
+                    <td><%= ad_disha[i].pro4_value %></td>
+                    <td><%= ad_disha[i].pro4_color %></td>
+                    <td><img src="/uploads/<%= ad_disha[i].about_img %>" height="50px" width="50px"></td>
+                 </tr>
+             <% } %>
+            </table>
+    </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>     

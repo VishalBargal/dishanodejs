@@ -1,0 +1,52 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Footer </h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/savefooter_address" method="post">
+            <div class="col-md-12 mt-3 float-left">
+              <h3>Footer Address</h3>
+               </div>
+            <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title 1</label>
+                <input type="text" value="<%= footer.head1 %>" name="head1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title 2</label>
+                <input type="text" value="<%= footer.head2 %>" name="head2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Village</label>
+                <input type="text"   value="<%= footer.village %>"   name="village" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+               <label>Tal. Dist.</label>
+               <input type="text" value="<%= footer.dist %>"  name="dist" class="form-control" >
+              </div>
+              <div class="col-md-6 mt-3 float-left">
+              <label>State and Pincode </label>
+              <input type="text"  value="<%= footer.statepin %>" name="statepin" class="form-control" >
+            </div>
+            <div class="col-md-6 mt-3 float-left">
+            <label>Contact Number</label>
+            <input type="text"  value="<%= footer.cnumber %>" name="cnumber" class="form-control" >
+            <input type="hidden"  value="<%= footer.footer_address_id %>" name="footer_address_id" class="form-control" >
+
+           </div>
+           
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

@@ -1,0 +1,63 @@
+<h1>edit page open</h1>
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Navbar Page </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 shadow mt-3 mb-2">
+            <h3>Edit Navbar</h3>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/admin/update_nav" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="Navbar_id" value="<%= old_nav.Navbar_id %>">
+            <div class="col-md-4 float-left mt-2">
+                <label>Office Time</label><br>
+                <input type="text" name="otime" class="form-control" value="<%= old_nav.otime %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Contact Number</label><br>
+                <input type="text" name="cnumber" class="form-control" value="<%= old_nav.cnumber %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading First</label><br>
+                <input type="text" name="fhead" class="form-control" value="<%= old_nav.fhead %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Second</label><br>
+                <input type="text" name="shead" class="form-control" value="<%= old_nav.shead %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Third</label><br>
+                <input type="text" name="thead" class="form-control" value="<%= old_nav.thead %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Forth</label><br>
+                <input type="text" name="fohead" class="form-control" value="<%= old_nav.fohead %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Fifth</label><br>
+                <input type="text" name="fihead" class="form-control" value="<%= old_nav.fihead %>">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>admin_image</label><br>
+                <input type="file" accept="image/*" name="aimg" class="form-control">
+                <img src="/uploads/<%= old_nav.nav_img %>" width="150px" height="150px" />
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Navbar Logo</label><br>
+                <input type="file" accept="image/*" name="nlogo" class="form-control">
+                <img src="/uploads/<%= old_nav.nav_logo %>" width="150px" height="150px" />
+            </div>
+            <div class="col-md-12 ">
+                <button class="btn btn-primary float-right mt-5">Update</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('footer.ejs') %>   

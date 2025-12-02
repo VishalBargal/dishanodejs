@@ -1,0 +1,44 @@
+<%- include('nav.ejs') %>
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Contacted Persons</h1>
+                <table class="table table-bordered table-hover table-striped text-dark text-center">
+                 <tr class="bg-success">
+                    <th style="width:70px">Action</th>
+                    <th style="width:100px">Date</th>
+                    <th style="width:150px">Name</th>
+                    <th style="width:150px">EMail</th>
+                    <th style="width:150px">Contact Number</th>
+                    <th style="width:200px;">Discription</th>
+                 </tr>
+                 <% for(i=0;i<contactp.length;i++) { %> 
+                    <tr>
+                        <td><%= i+1 %>
+                            <a href="/admin/delete_contactp?contactus_id=<%= contactp[i].contactus_id %>">
+                                <button class="btn btn-danger btn-sm ml-1"><i class="fa fa-trash"></i></button>
+                            </a>
+                        </td>
+                        <td><%= contactp[i].date %></td>
+                        <td><%= contactp[i].name %></td>
+                        <td><%= contactp[i].email %></td>
+                        <td><%= contactp[i].phone %></td>
+                        <td  style="width:200px;"><%= contactp[i].address %></td>
+
+                        
+                     </tr>
+                 <% } %>
+                </table>
+        </div>
+
+    </div>
+</div>
+<%- include('footer.ejs') %> 

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title> Disha Dashboard </title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet"/>
+  <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
+
+  <!-- PLUGINS CSS STYLE -->
+  <link href="/assets/plugins/toaster/toastr.min.css" rel="stylesheet" />
+  <!-- <link href="/assets/plugins/nprogress/nprogress.css" rel="stylesheet" /> -->
+  <link href="/assets/plugins/flag-icons/css/flag-icon.min.css" rel="stylesheet"/>
+  <link href="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+  <link href="/assets/plugins/ladda/ladda.min.css" rel="stylesheet" />
+  <link href="/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+  <link href="/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- SLEEK CSS -->
+  <link id="sleek-css" rel="stylesheet" href="/assets/css/sleek.css" />
+
+  
+
+  <!-- FAVICON -->
+  <link href="/assets/img/dishalogo.jpg" rel="shortcut icon" />
+
+  <!--
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- <script src="/assets/plugins/nprogress/nprogress.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    .text-dark
+    {
+        color: black;
+    }
+    label
+    {
+      margin: 0px;
+      padding: 0px;
+    }
+</style>
+</head>
+
+
+  <body class="sidebar-fixed sidebar-dark header-light header-fixed" id="body">
+
+    <!-- <script>
+      NProgress.configure({ showSpinner: false });
+      NProgress.start();
+    </script> -->
+
+    <div class="mobile-sticky-body-overlay"></div>
+
+    <div class="wrapper">
+      
+              <!--
+          ====================================
+          ——— LEFT SIDEBAR WITH FOOTER
+          =====================================
+        -->
+        <aside class="left-sidebar bg-sidebar">
+          <div id="sidebar" class="sidebar sidebar-with-footer">
+            <!-- Aplication Brand -->
+            <div class="app-brand">
+              <a href="/admin/home">
+                <svg
+                  class="brand-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid"
+                  width="30"
+                  height="33"
+                  viewBox="0 0 30 33"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <path
+                      class="logo-fill-blue"
+                      fill="#7DBCFF"
+                      d="M0 4v25l8 4V0zM22 4v25l8 4V0z"
+                    />
+                    <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
+                  </g>
+                </svg>
+                <span class="brand-name">Disha Dashboard</span>
+              </a>
+            </div>
+            <!-- begin sidebar scrollbar -->
+            <div class="sidebar-scrollbar">
+
+              <!-- sidebar menu -->
+              <ul class="nav sidebar-inner" id="sidebar-menu">
+                <li  class="has-sub active expand" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product13"
+                    aria-expanded="false" aria-controls="product13">
+                    <i class="mdi mdi-view-dashboard-outline"></i>
+                    <span class="nav-text">Admission</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse "  id="product13"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu"> 
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/view_registrations">
+                                <span class="nav-text">View Registrations</span>  
+                              </a>
+                            </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/view_admissions">
+                              <span class="nav-text">View Admission</span>  
+                            </a>
+                          </li>
+                    </div>
+                  </ul>
+                  </li>
+                <li  class="has-sub active expand" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product1"
+                    aria-expanded="false" aria-controls="product1">
+                    <i class="mdi mdi-view-dashboard-outline"></i>
+                    <span class="nav-text">HOME</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse "  id="product1"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      <li  class="" >
+                        <a class="sidenav-item-link" href="/admin/navbar">
+                          <span class="nav-text">Navbar</span> 
+                      </a>
+                      </li> 
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/slider">
+                              <span class="nav-text">SLIDER</span> 
+                          </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/about_disha">
+                              <span class="nav-text">About Disha</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/services_head">
+                              <span class="nav-text">Servervices head</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/services_card">
+                              <span class="nav-text">Servervices card</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/home_baner">
+                              <span class="nav-text">Home Baner</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/home_client">
+                              <span class="nav-text">Home client</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/portfolio">
+                              <span class="nav-text">Portfolio</span>  
+                            </a>
+                          </li>
+                    </div>
+                  </ul>
+                  </li>
+                <li  class="has-sub active expand" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product"
+                    aria-expanded="false" aria-controls="product">
+                    <i class="mdi mdi-view-dashboard-outline"></i>
+                    <span class="nav-text">ABOUT</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse "  id="product"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu"> 
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/mabout_disha">
+                              <span class="nav-text">About disha</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/aboutview">
+                              <span class="nav-text">Our view</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/about_baner">
+                              <span class="nav-text">About Baner</span>  
+                            </a>
+                          </li>
+                          <li  class="" >
+                            <a class="sidenav-item-link" href="/admin/about_team">
+                              <span class="nav-text">Team</span>  
+                            </a>
+                          </li>
+                    </div>
+                  </ul>
+                  </li>
+                  <li  class="has-sub active expand" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product2"
+                      aria-expanded="false" aria-controls="product2">
+                      <i class="mdi mdi-view-dashboard-outline"></i>
+                      <span class="nav-text">COURSES-MSCIT</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse "  id="product2"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu"> 
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/course_slider">
+                                <span class="nav-text">Course Slider</span>  
+                              </a>
+                            </li>
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/mscit_welcome">
+                                <span class="nav-text">Mscit Welcome</span>  
+                              </a>
+                            </li>
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/mscit_important">
+                                <span class="nav-text">Mscit Important</span>  
+                              </a>
+                            </li>
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/mscit_banar">
+                                <span class="nav-text">Mscit Banar</span>  
+                              </a>
+                            </li>
+                            <li  class="" >
+                              <a class="sidenav-item-link" href="/admin/mscit_features">
+                                <span class="nav-text">Mscit Features and Links</span>  
+                              </a>
+                            </li>
+                      </div>
+                    </ul>
+                    </li>
+
+
+                    <li  class="has-sub active expand" >
+                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product4"
+                        aria-expanded="false" aria-controls="product4">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Typing</span> <b class="caret"></b>
+                      </a>
+                      <ul  class="collapse "  id="product4"
+                        data-parent="#sidebar-menu">
+                        <div class="sub-menu"> 
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/typing_welcome">
+                                  <span class="nav-text">Typing Welcome</span>  
+                                </a>
+                              </li>
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/typing_important">
+                                  <span class="nav-text">Typing Important</span>  
+                                </a>
+                              </li>
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/typing_banar">
+                                  <span class="nav-text">Typing Banar</span>  
+                                </a>
+                              </li>
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/typing_features">
+                                  <span class="nav-text">Typing Features</span>  
+                                </a>
+                              </li>
+                        </div>
+                      </ul>
+                      </li>
+
+                      <li  class="has-sub active expand" >
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product7"
+                          aria-expanded="false" aria-controls="product7">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span class="nav-text">CCC</span> <b class="caret"></b>
+                        </a>
+                        <ul  class="collapse "  id="product7"
+                          data-parent="#sidebar-menu">
+                          <div class="sub-menu"> 
+                                <li  class="" >
+                                  <a class="sidenav-item-link" href="/admin/ccc_welcome">
+                                    <span class="nav-text">CCC Welcome</span>  
+                                  </a>
+                                </li>
+                                <li  class="" >
+                                  <a class="sidenav-item-link" href="/admin/ccc_important">
+                                    <span class="nav-text">CCC Important</span>  
+                                  </a>
+                                </li>
+                                <li  class="" >
+                                  <a class="sidenav-item-link" href="/admin/ccc_banar">
+                                    <span class="nav-text">CCC Banar</span>  
+                                  </a>
+                                </li>
+                                <li  class="" >
+                                  <a class="sidenav-item-link" href="/admin/ccc_features">
+                                    <span class="nav-text">CCC Features</span>  
+                                  </a>
+                                </li>
+                          </div>
+                        </ul>
+                        </li>
+
+                    <li  class="has-sub active expand" >
+                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product3"
+                        aria-expanded="false" aria-controls="product3">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">CSC</span> <b class="caret"></b>
+                      </a>
+                      <ul  class="collapse "  id="product3"
+                        data-parent="#sidebar-menu">
+                        <div class="sub-menu"> 
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/csc_heading">
+                                  <span class="nav-text">Service heading</span>  
+                                </a>
+                              </li>
+                              <li  class="" >
+                                <a class="sidenav-item-link" href="/admin/csc_card">
+                                  <span class="nav-text">Csc Card</span>  
+                                </a>
+                              </li>
+                        </div>
+                      </ul>
+                      </li>
+                      <li  class="has-sub active expand" >
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product9"
+                          aria-expanded="false" aria-controls="product9">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span class="nav-text">Contact Us</span> <b class="caret"></b>
+                        </a>
+                        <ul  class="collapse "  id="product9"
+                          data-parent="#sidebar-menu">
+                          <div class="sub-menu"> 
+                                <li  class="" >
+                                  <a class="sidenav-item-link" href="/admin/contact_us">
+                                    <span class="nav-text">Contact us </span>  
+                                  </a>
+                                </li>
+                             
+                          </div>
+                        </ul>
+                        </li>
+                        <li  class="has-sub active expand" >
+                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product10"
+                            aria-expanded="false" aria-controls="product10">
+                            <i class="mdi mdi-view-dashboard-outline"></i>
+                            <span class="nav-text">Contacted Persons</span> <b class="caret"></b>
+                          </a>
+                          <ul  class="collapse "  id="product10"
+                            data-parent="#sidebar-menu">
+                            <div class="sub-menu"> 
+                                  <li  class="" >
+                                    <a class="sidenav-item-link" href="/admin/contact_person">
+                                      <span class="nav-text">Contacted persons </span>  
+                                    </a>
+                                  </li>
+                               
+                            </div>
+                          </ul>
+                          </li>
+                   
+                          <li  class="has-sub active expand" >
+                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product11"
+                              aria-expanded="false" aria-controls="product11">
+                              <i class="mdi mdi-view-dashboard-outline"></i>
+                              <span class="nav-text">Footer</span> <b class="caret"></b>
+                            </a>
+                            <ul  class="collapse "  id="product11"
+                              data-parent="#sidebar-menu">
+                              <div class="sub-menu"> 
+                                    <li  class="" >
+                                      <a class="sidenav-item-link" href="/admin/footer_address">
+                                        <span class="nav-text">Address</span>  
+                                      </a>
+                                    </li>
+                                 
+                              </div>
+                            </ul>
+                            </li>
+                            <li  class="has-sub active expand" >
+                              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product12"
+                                aria-expanded="false" aria-controls="product12">
+                                <i class="mdi mdi-view-dashboard-outline"></i>
+                                <span class="nav-text">Top Banars</span> <b class="caret"></b>
+                              </a>
+                              <ul  class="collapse "  id="product12"
+                                data-parent="#sidebar-menu">
+                                <div class="sub-menu"> 
+                                      <li  class="" >
+                                        <a class="sidenav-item-link" href="/admin/top_banar">
+                                          <span class="nav-text">Banar</span>  
+                                        </a>
+                                      </li>
+                                   
+                                </div>
+                              </ul>
+                              </li>
+                       
+
+              </ul>
+            </div>
+
+            <hr class="separator" />
+            <br>
+            <br>
+<!-- 
+            <h6 class="text-center p-0 mb-2">
+              <i class="fa fa-phone"></i>
+              <i class="fa fa-whatsapp"></i>
+              <i class="fa fa-address-book"></i>
+            </h6> -->
+          </div>
+        </aside>
+
+      
+
+      <div class="page-wrapper">
+                  <!-- Header -->
+          <header class="main-header " id="header">
+            <nav class="navbar navbar-static-top navbar-expand-lg">
+              <!-- Sidebar toggle button -->
+              <button id="sidebar-toggler" class="sidebar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <!-- search form -->
+              <div class="search-form d-none d-lg-inline-block">
+              </div>
+
+              <div class="navbar-right ">
+                <ul class="nav navbar-nav">
+                  <!-- Github Link Button -->
+                  <!-- User Account -->
+                  <li class="dropdown user-menu">
+                    <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                      <img src="/assets/img/user/rahul.jpeg" class="user-image" alt="User Image" />
+                      <span class="d-none d-lg-inline-block">Rahul Dahatonde</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <!-- User image -->
+                      <li class="dropdown-header">
+                        <img src="/assets/img/user/rahul.jpeg" class="img-circle" alt="User Image" />
+                        <div class="d-inline-block">
+                           <small class="pt-1"></small>
+                        </div>
+                      </li>
+
+                      <!-- <li>
+                        <a href="profile.html">
+                          <i class="mdi mdi-account"></i> My Profile
+                        </a>
+                      </li> -->
+                      <!-- <li>
+                        <a href="email-inbox.html">
+                          <i class="mdi mdi-email"></i> Message
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
+                      </li>
+                      <li>
+                        <a href="#"> <i class="mdi mdi-settings"></i> Account Setting </a>
+                      </li> -->
+
+                      <li class="dropdown-footer">
+                        <a href="/admin/logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+
+          </header>
+
+
+        <div class="content-wrapper">
+          <div class="content p-1">	

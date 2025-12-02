@@ -1,0 +1,107 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Navbar Page </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 shadow mt-3 mb-2">
+            <h3>Edit Navbar</h3>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/admin/savenav" method="post" enctype="multipart/form-data">
+            <div class="col-md-4 float-left mt-2">
+                <label>Office Time</label><br>
+                <input type="text" name="otime" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Contact Number</label><br>
+                <input type="text" name="cnumber" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>admin_image</label><br>
+                <input type="file" accept="image/*" name="aimg" class="form-control">
+            </div>
+        <div class="col-md-4 float-left mt-2">
+            <label>Navbar Logo</label><br>
+            <input type="file" accept="image/*" name="nlogo" class="form-control">
+        </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading First</label><br>
+                <input type="text" name="fhead" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Second</label><br>
+                <input type="text" name="shead" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Third</label><br>
+                <input type="text" name="thead" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Forth</label><br>
+                <input type="text" name="fohead" class="form-control">
+            </div>
+            <div class="col-md-4 float-left mt-2">
+                <label>Heading Fifth</label><br>
+                <input type="text" name="fihead" class="form-control">
+            </div>
+            <div class="col-md-12 ">
+                <button class="btn btn-primary float-right mt-5">Submit</button>
+            </div>
+        </form>
+    </div>
+       
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Office_time</th>
+                    <th>Con.No</th>
+                    <th>F-Head</th>
+                    <th>S-Head</th>
+                    <th>T-Head</th>
+                    <th>Fo-Head</th>
+                    <th>Fi-Head</th>
+                    <th>Nav-Img</th>
+                    <th>Nav-logo</th>
+                </tr>
+                <% for(i=0;i<nav_data.length;i++) { %>
+                 <tr>
+                    <td class="text-center p-3">
+                        <a href="/admin/edit_navbar?Navbar_id=<%= nav_data[i].Navbar_id %>">
+                        <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                        </a>
+                        <a href="/admin/delete_navbar?Navbar_id=<%= nav_data[i].Navbar_id %>">
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                        </a>
+                    </td>
+                    <td><%= i+1 %></td>
+                    <td><%= nav_data[i].otime %></td>
+                    <td><%= nav_data[i].cnumber %></td>
+                    <td><%= nav_data[i].fhead %></td>
+                    <td><%= nav_data[i].shead %></td>
+                    <td><%= nav_data[i].thead %></td>
+                    <td><%= nav_data[i].fohead %></td>
+                    <td><%= nav_data[i].fihead %></td>
+                    <td>
+                        <img src="/uploads/<%= nav_data[i].nav_img %>" width="150px" height="150px" />
+                    </td>
+                    <td>
+                        <img src="/uploads/<%= nav_data[i].nav_logo %>" width="150px" height="150px" />
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>   

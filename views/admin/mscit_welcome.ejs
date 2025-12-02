@@ -1,0 +1,61 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Welcome MSCIT</h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/savecmscit_welcome" method="post" enctype="multipart/form-data">
+            <div class="col-md-6 mt-3 float-left">
+                <label>Main Head</label>
+                <input type="text" value="<%= wel_mscit.cmfhead1 %>"  name="cmfhead1" class="form-control">
+                </div>
+                <div class="col-md-6 mt-3 float-left">
+                <label>Main Subhead</label>
+                <input type="text" value="<%= wel_mscit.cmfhead2 %>" name="cmfhead2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Top-Title</label>
+                <input type="text" value="<%= wel_mscit.cwelhead1 %>" name="cwelhead1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title</label>
+                <input type="text" value="<%= wel_mscit.cwelhead2 %>" name="cwelhead2" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 1</label>
+                <input type="text" value="<%= wel_mscit.cwelp1 %>" name="cwelp1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+               <label>Paragraph 2</label>
+               <input type="text" value="<%= wel_mscit.cwelp2 %>" name="cwelp2" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Paragraph 3</label>
+              <input type="text" value="<%= wel_mscit.cwelp3 %>" name="cwelp3" class="form-control" >
+            </div>
+             <div class="col-md-12 mt-3 float-left">
+             <label>Paragraph 4</label>
+             <input type="text" value="<%= wel_mscit.cwelp4 %>" name="cwelp4" class="form-control" >
+            </div>
+            <div class="col-md-6 mt-3 float-left">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="cwelimg" class="form-control">
+                <img src="/uploads/<%= wel_mscit.mscit_img %>" height="100px" width="100px">
+                <input type="hidden" value="<%= wel_mscit.welcome_mscit_id %>"  name="welcome_mscit_id" class="form-control">
+                
+                </div>
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update Welcome Disha</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

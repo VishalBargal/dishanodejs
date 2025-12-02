@@ -1,0 +1,68 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">TYPING Important </h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/savectyping_important" method="post" enctype="multipart/form-data">
+            <div class="col-md-6 mt-3 float-left">
+                <label>Main Head</label>
+                <input type="text" value="<%= typing.cpointsmhead1 %>"  name="cpointsmhead1" class="form-control">
+                </div>
+                <div class="col-md-6 mt-3 float-left">
+                <label>Main Subhead</label>
+                <input type="text"  value="<%= typing.cpointsmhead2 %>"     name="cpointsmhead2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Top-Title</label>
+                <input type="text"  value="<%= typing.cpointshead1 %>"    name="cpointshead1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title</label>
+                <input type="text"   value="<%= typing.cpointshead2 %>"    name="cpointshead2" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 1</label>
+                <input type="text"  value="<%= typing.cpointsp1 %>"    name="cpointsp1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+               <label>Paragraph 2</label>
+               <input type="text"  value="<%= typing.cpointsp2 %>"    name="cpointsp2" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Paragraph 3</label>
+              <input type="text"  value="<%= typing.cpointsp3 %>"   name="cpointsp3" class="form-control" >
+            </div>
+             <div class="col-md-12 mt-3 float-left">
+             <label>Paragraph 4</label>
+             <input type="text" value="<%= typing.cpointsp4 %>"     name="cpointsp4" class="form-control" >
+            </div>
+            <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 5</label>
+                <input type="text" value="<%= typing.cpointsp5 %>"   name="cpointsp5" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 6</label>
+                <input type="text" value="<%= typing.cpointsp6 %>"  name="cpointsp6" class="form-control" >
+               </div>
+            <div class="col-md-6 mt-3 float-left">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="cpointsimg2" class="form-control">
+                <img src="/uploads/<%= typing.mscit_img1 %>" height="100px" width="100px">
+                <input type="hidden" value="<%= typing.typing_important_id %>"   name="typing_important_id" class="form-control">
+                </div>
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update Important</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

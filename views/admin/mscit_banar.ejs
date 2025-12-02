@@ -1,0 +1,50 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow"> MSCIT Details Banar </h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/savecmscit_banar" method="post" enctype="multipart/form-data">
+           
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title 1</label>
+                <input type="text" value="<%= mscit.cbanarhaed1 %>"  name="cbanarhaed1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title 2</label>
+                <input type="text" value="<%= mscit.cbanarhead2 %>"   name="cbanarhead2" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 1</label>
+                <input type="text"  value="<%= mscit.cbanarp1 %>"   name="cbanarp1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+               <label>Paragraph 2</label>
+               <input type="text"  value="<%= mscit.cbanarp2 %>"   name="cbanarp2" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Paragraph 3</label>
+              <input type="text" value="<%= mscit.ccbanarp3 %>"    name="ccbanarp3" class="form-control" >
+            </div>
+           
+            <div class="col-md-6 mt-3 float-left">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="cbanarimg" class="form-control">
+                <img src="/uploads/<%= mscit.mscit_img2 %>" height="100px" width="100px">
+                <input type="hidden"  value="<%= mscit.banar_mscit_id %>"    name="banar_mscit_id" class="form-control">
+                </div>
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

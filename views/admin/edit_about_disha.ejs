@@ -1,0 +1,99 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">About Disha </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+  
+        <form action="/admin/update_about_disha/" method="post" enctype="multipart/form-data">
+         <div class="row">
+            
+            <div class="col-md-4 mt-3 float-left">
+                <input type="hidden" name="about_disha_id" value="<%= old_disha.about_disha_id %>">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="ad_img1" class="form-control">
+                <img src="/uploads/<%= old_disha.about_img %>" height="100px" width="100px" >
+                </div>
+                <div class="col-md-4 mt-3 float-left">
+                <label>Enter Experience</label>
+                <input type="text"  name="experience" class="form-control" value="<%= old_disha.experience %>">
+                </div>
+                <div class="col-md-4 mt-3 float-left">
+                <label>Enter Word</label>
+                <input type="text" name="exp_word" class="form-control" value="<%= old_disha.exp_word %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Top-Title</label>
+                <input type="text" name="ttitle" class="form-control" value="<%= old_disha.ttitle %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Title</label>
+                <input type="text" name="title" class="form-control" value="<%= old_disha.title %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Enter Title Last H-Word</label>
+                <input type="text" name="h_word" class="form-control" value="<%= old_disha.h_word %>">
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Enter Discription</label>
+                <textarea rows="3" name="disc" class="form-control"><%= old_disha.disc %></textarea>
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 name</label>
+                <input type="text" name="pro1_name" class="form-control" value="<%= old_disha.pro1_name %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 Value</label>
+                <input type="int" name="pro1_value" maxlength="2" class="form-control" value="<%= old_disha.pro1_value %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 1 color</label>
+                <input type="color" name="pro1_color" class="form-control" value="<%= old_disha.pro1_color %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 name</label>
+                <input type="text" name="pro2_name" class="form-control" value="<%= old_disha.pro2_name %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 Value</label>
+                <input type="int" name="pro2_value" maxlength="2" class="form-control" value="<%= old_disha.pro2_value %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 2 color</label>
+                <input type="color" name="pro2_color" class="form-control" value="<%= old_disha.pro2_color %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 name</label>
+                <input type="text" name="pro3_name" class="form-control" value="<%= old_disha.pro3_name %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 Value</label>
+                <input type="int" name="pro3_value" maxlength="2" class="form-control" value="<%= old_disha.pro3_value %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 3 color</label>
+                <input type="color" name="pro3_color" class="form-control" value="<%= old_disha.pro3_color %>">
+               </div>
+               <div class="col-md-4 mt-3 float-left">
+                <label>Progress 4 name</label>
+                <input type="text" name="pro4_name" class="form-control" value="<%= old_disha.pro4_name %>">
+               </div>
+               <div class="col-md-4 mt-4 float-left">
+                <label>Progress 4 Value</label>
+                <input type="int" name="pro4_value" maxlength="2" class="form-control" value="<%= old_disha.pro4_value %>">
+               </div>
+               <div class="col-md-4 mt-4 float-left">
+                <label>Progress 4 color</label>
+                <input type="color" name="pro4_color" class="form-control" value="<%= old_disha.pro4_color %>">
+               </div>
+              
+               <div class="col-md-12 text-right mt-4 mb-4">
+                <button class="btn btn-primary">Update About Disha</button>
+               </div>
+         </div>
+        </form>      
+</div>
+<%- include('footer.ejs') %>     

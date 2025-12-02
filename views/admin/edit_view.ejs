@@ -1,0 +1,33 @@
+<%- include('nav.ejs') %>
+
+
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+            <form action="/admin/updateview_card" method="post" enctype="multipart/form-data" >
+                <input type="hidden" value="<%= about_view.about_view_id %>" class="form-control" name="about_view_id" >
+                <div class="col-md-12 float-left mt-3">
+                    <label>Enter Card Title</label>
+                    <input type="text" value="<%= about_view.viewtitle %>" class="form-control" name="viewtitle" >
+                </div>
+                <div class="col-md-12 float-left mt-3">
+                    <label>Enter Card Discription</label>
+                    <textarea rows="2"   class="form-control" name="viewdisc" ><%= about_view.viewdisc %></textarea>
+                </div> 
+                <div class="col-md-12 float-left mt-3">
+                    <label>Select Card Image/logo</label>
+                    <input type="file" accept="image/*" class="form-control" name="viewimg" >
+                </div>
+                <div class="col-md-12 float-left mt-3">
+                <img src="/uploads/<%= about_view.view_img %>" height="100px" width="100px">
+
+                </div>
+
+                <div class="col-md-12 float-left">
+                    <button class="btn btn-primary  mt-4">Add View</button>
+                </div>
+            </form>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     

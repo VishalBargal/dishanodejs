@@ -1,0 +1,57 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Baner </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5 ">
+        <form action="/admin/saveabout_baner" method="post" enctype="multipart/form-data" >
+
+        <div class="col-md-12 float-left">
+            <h4>Enter Details</h4>
+        </div>
+             <div class="col-md-6 mt-4 float-left">
+                <input type="hidden" value="<%= baner.about_banar_id %>"  name="about_banar_id" class="form-control ">
+
+                <label>Head First</label>
+                <input type="text" value="<%= baner.fthead %>" name="fthead" class="form-control " >
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Head Second</label>
+                <input type="text" value="<%= baner.shead %>"  name="shead" class="form-control ">
+             </div>  
+             <div class="col-md-6 mt-4 float-left">
+                <label>Point 1</label>
+                <input type="text" value="<%= baner.point1 %>"  name="point1" class="form-control ">
+             </div> 
+             <div class="col-md-6 mt-4 float-left">
+                <label>Point 2</label>
+                <input type="text" value="<%= baner.point2 %>"  name="point2" class="form-control ">
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Point 3</label>
+                <input type="text" value="<%= baner.point3 %>"  name="point3" class="form-control ">
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Background Image</label>
+                <input type="file" name="bg_img" class="form-control ">
+             </div>
+              <div class="col-md-12 mt-4 float-left text-right">
+                <img src="/uploads/<%= baner.view_img %>" height="100px" width="100px">
+            
+             </div>
+             <div class="col-md-12 float-left text-center mt-4">
+                <button class="btn btn-primary" type="submit">Update </button>
+              </div>
+         
+            </form>
+    </div>
+</div>   
+
+
+<%- include('footer.ejs') %>     
+

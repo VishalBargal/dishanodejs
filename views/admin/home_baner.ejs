@@ -1,0 +1,86 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Add Baner Details </h1>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="row mt-5 ">
+        <form action="/admin/savehbaner" method="post" enctype="multipart/form-data" >
+
+        <div class="col-md-12 float-left">
+            <h4>Enter Details</h4>
+        </div>
+             <div class="col-md-12 mt-4 float-left">
+
+                <label>Head First</label>
+                <input type="text" name="fthead" class="form-control " >
+             </div>
+             <div class="col-md-12 mt-4 float-left">
+                <label>Head Second</label>
+                <input type="text" name="shead" class="form-control ">
+             </div>  
+             <div class="col-md-12 mt-4 float-left">
+                <label>Baner Discription I</label>
+                <input type="text" name="bdisc" class="form-control ">
+             </div> 
+             <div class="col-md-12 mt-4 float-left">
+                <label>Baner Discription II</label>
+                <input type="text" name="sbdisc" class="form-control ">
+             </div> 
+              <div class="col-md-12 mt-4 float-left">
+                <label>Select Baner Image</label>
+                <input type="file"  accept="image/*" name="baner_img" class="form-control ">
+             </div>
+             <div class="col-md-12 float-left text-center mt-4">
+                <button class="btn btn-primary" type="submit">Save </button>
+              </div>
+         
+            </form>
+    </div>
+</div>		
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           
+            <table class="table table-bordered table-hover table-striped">
+               <tr class="text-dark">
+                <th>Action</th>
+                <th>Sr.No.</th>
+                <th>First Title</th>
+                <th>Second Title</th>
+                <th>Baner Discription I</th>
+                <th>Baner Discription II</th>
+                <th>Baner Image</th>
+          
+               </tr>
+
+     <% for(i=0;i<b_home.length;i++) { %>
+        <tr class="text-dark">
+            <td>
+                <a href="/admin/delete_homebaner?home_baner_id=<%= b_home[i].home_baner_id %>"><i class="fa fa-trash btn btn-danger"></i></a>
+            </td>
+            <td><%= i+1 %></td>
+            <td><%= b_home[i].fthead %></td>
+            <td><%= b_home[i].shead %></td>
+            <td><%= b_home[i].bdisc %></td>
+            <td><%= b_home[i].sbdisc %></td>
+           <td>           
+                <img src="/uploads/<%= b_home[i].b_img %>" height="100px" width="100px">
+
+            </td>
+        </tr>
+    
+      <% } %>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%- include('footer.ejs') %>     

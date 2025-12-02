@@ -1,0 +1,40 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Welcome Services</h1>
+        </div>
+    </div>
+</div>  
+
+
+<div class="container">
+    <div class="row mt-5 ">
+        <form action="/admin/updateservices" method="post" >
+
+        <div class="col-md-12 float-left">
+            <h4>Enter Details</h4>
+        </div>
+             <div class="col-md-12 mt-4 float-left">
+            <input type="hidden" name="saveservices_id" value="<%= shead[0].saveservices_id %>">
+
+                <label>Head First</label>
+                <input type="text" value="<%= shead[0].firsthead %>" name="firsthead" class="form-control " >
+             </div>
+             <div class="col-md-12 mt-4 float-left">
+                <label>Head Second</label>
+                <input type="text" value="<%= shead[0].secondhead %>" name="secondhead" class="form-control ">
+             </div>   <div class="col-md-12 mt-4 float-left">
+                <label>Head Third</label>
+                <input type="text" value="<%= shead[0].thirdhead %>" name="thirdhead" class="form-control ">
+             </div>
+             <div class="col-md-12 float-left text-center mt-4">
+                <button class="btn btn-primary" type="submit">Save </button>
+              </div>
+         
+            </form>
+    </div>
+</div>  
+
+<%- include('footer.ejs') %>     
+

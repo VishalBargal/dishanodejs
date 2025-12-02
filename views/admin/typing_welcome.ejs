@@ -1,0 +1,60 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Welcome TYPING</h1>
+        </div>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="row">
+    <form action="/admin/savectyping_welcome" method="post" enctype="multipart/form-data">
+            <div class="col-md-6 mt-3 float-left">
+                <label>Main Head</label>
+                <input type="text" value="<%=wel_typing.cmfhead1 %>"  name="cmfhead1" class="form-control">
+                </div>
+                <div class="col-md-6 mt-3 float-left">
+                <label>Main Subhead</label>
+                <input type="text" value="<%=wel_typing.cmfhead2 %>" name="cmfhead2" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Top-Title</label>
+                <input type="text" value="<%=wel_typing.cwelhead1 %>"  name="cwelhead1" class="form-control" >
+               </div>
+               <div class="col-md-6 mt-3 float-left">
+                <label>Enter Title</label>
+                <input type="text"  value="<%=wel_typing.cwelhead2 %>"name="cwelhead2" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+                <label>Paragraph 1</label>
+                <input type="text"  value="<%=wel_typing.cwelp1 %>" name="cwelp1" class="form-control" >
+               </div>
+               <div class="col-md-12 mt-3 float-left">
+               <label>Paragraph 2</label>
+               <input type="text" value="<%=wel_typing.cwelp2 %>" name="cwelp2" class="form-control" >
+              </div>
+              <div class="col-md-12 mt-3 float-left">
+              <label>Paragraph 3</label>
+              <input type="text" value="<%=wel_typing.cwelp3 %>" name="cwelp3" class="form-control" >
+            </div>
+             <div class="col-md-12 mt-3 float-left">
+             <label>Paragraph 4</label>
+             <input type="text" value="<%=wel_typing.cwelp4 %>" name="cwelp4" class="form-control" >
+            </div>
+            <div class="col-md-6 mt-3 float-left">
+                <label>Select Image</label>
+                <input type="file" accept="images/*" name="cwelimg1" class="form-control">
+                <img src="/uploads/<%= wel_typing.mscit_img %>" height="100px" width="100px">
+                <input type="hidden"  value="<%=wel_typing.typing_welcome_id %>"  name="typing_welcome_id" class="form-control">
+                </div>
+               <div class="col-md-12 text-right float-left mt-4 mb-4">
+                <button class="btn btn-primary">Update</button>
+               </div>
+            </form>      
+
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+

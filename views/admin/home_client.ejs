@@ -1,0 +1,101 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Disha Clients</h1>
+        </div>
+    </div>
+</div>		 
+
+
+<div class="container">
+    <div class="row mt-5 ">
+        <form action="/admin/savecliet" method="post" enctype="multipart/form-data" >
+
+        <div class="col-md-12 float-left">
+            <h4>Enter Details</h4>
+        </div>
+             <div class="col-md-6 mt-4 float-left">
+
+                <label>Head First</label>
+                <input type="text" value="<%= b_home.fthead %>" name="fthead" class="form-control " >
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Head Second</label>
+                <input type="text"" value="<%= b_home.shead %>" name="shead" class="form-control ">
+             </div>  
+             <div class="col-md-6 mt-4 float-left">
+                <label>Select Right Side Image</label>
+                <input type="file"  accept="image/*" name="client_img1" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img1 %>" height="100px" width="100px">
+
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Select Right Side Image</label>
+                <input type="file"  accept="image/*" name="client_img2" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img2 %>" height="100px" width="100px">
+                
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Select Left Side Image</label>
+                <input type="file"  accept="image/*" name="client_img3" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img3 %>" height="100px" width="100px">
+
+             </div>
+             <div class="col-md-6 mt-4 float-left">
+                <label>Select Left Side Image</label>
+                <input type="file"  accept="image/*" name="client_img4" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img4 %>" height="100px" width="100px">
+
+             </div>
+
+
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Discription Page I</label>
+                <input type="text" value="<%= b_home.fdisc1 %>" name="fdisc1" class="form-control ">
+             </div> 
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Title Page I</label>
+                <input type="text" value="<%= b_home.ftitlep1 %>" name="ftitlep1" class="form-control ">
+             </div> 
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Sub-Title Page I</label>
+                <input type="text" value="<%= b_home.stitlep1 %>" name="stitlep1" class="form-control ">
+             </div> 
+              <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Image Page I</label>
+                <input type="file"  accept="image/*" name="cslider_img1" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img5 %>" height="100px" width="100px">
+
+             </div>
+
+
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Discription Page II</label>
+                <input type="text" value="<%= b_home.disc2 %>" name="disc2" class="form-control ">
+             </div> 
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Title Page II</label>
+                <input type="text" value="<%= b_home.ftitlep2 %>" name="ftitlep2" class="form-control ">
+             </div> 
+             <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Sub-Title Page II</label>
+                <input type="text" value="<%= b_home.stitlep2 %>" name="stitlep2" class="form-control ">
+             </div> 
+              <div class="col-md-6 mt-4 float-left">
+                <label>Cliet Slider Image Page II</label>
+                <input type="file"  accept="image/*" name="cslider_img2" class="form-control ">
+                <img src="/uploads/<%= b_home.cli_img6 %>" height="100px" width="100px">
+                <input type="text" value="<%= b_home.home_client_id %>" name="home_client_id">
+
+             </div>
+
+
+             <div class="col-md-12 float-left text-center mt-4">
+                <button class="btn btn-primary" type="submit">upadate </button>
+              </div>
+         
+            </form>
+    </div>
+</div>	
+<%- include('footer.ejs') %>     

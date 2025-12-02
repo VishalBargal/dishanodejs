@@ -1,0 +1,128 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Add Card </h1>
+        </div>
+    </div>
+</div>		
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+            <form action="/admin/savecsc_card" method="post" enctype="multipart/form-data" >
+                <div class="col-md-6 float-left mt-3">
+                    <label>Enter Card Title</label>
+                    <input type="text" class="form-control" name="chead" required >
+                </div>
+                <div class="col-md-6 float-left mt-3">
+                    <label>Enter Sub-Title</label>
+                    <input  class="form-control" name="subtitle" type="text" required>
+                </div> 
+                <div class="col-md-6 float-left mt-3">
+                    <label>Enter Card Discription 1</label>
+                    <textarea rows="3" class="form-control" name="card_disc1" required></textarea>
+                </div> 
+                <div class="col-md-6 float-left mt-3">
+                    <label>Enter Card Discription 2</label>
+                    <textarea rows="3" class="form-control" name="card_disc2" required ></textarea>
+                </div> 
+                <div class="col-md-6 float-left mt-3">
+                    <label>Enter Apply Url</label>
+                    <input type="text"  class="form-control" name="curl" required>
+                </div>
+                <div class="col-md-6 float-left mt-3">
+                    <label>Select Card Image/logo</label>
+                    <input type="file" accept="image/*" class="form-control" name="cimg" required>
+                </div>
+                <div class="col-md-12 float-left mt-3">
+                    <label>Enter Document for Application</label>
+                </div>
+                <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc1" >
+                </div>            
+                <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc2" >
+                </div>
+                 <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc3" >
+                </div>
+                 <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc4" >
+                </div>
+                 <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc5" >
+                </div>
+                <div class="col-md-6 float-left mt-3">
+                    <input type="text"  class="form-control" name="doc6" >
+                </div>
+          
+                <div class="col-md-12 float-left">
+                    <button class="btn btn-primary  mt-4">Add Card</button>
+                </div>
+            </form>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>CSC Card</h1>
+                <table class="table table-bordered table-hover table-striped text-dark">
+                 <tr class="bg-success">
+                    <th>Action</th>
+                    <th>Sr no.</th>
+                    <th>Card Title</th>
+                    <th>Sub-Title</th>
+                    <th>Card Discription 1</th>
+                    <th>Card Discription 2</th>
+                    <th> Url</th>                 
+                 </tr>
+                 <% for(i=0;i<csc_card.length;i++) { %> 
+                    <tr>
+                         <td>
+                            <a href="/admin/delete_csc_card?savecsc_card_id=<%= csc_card[i].savecsc_card_id %>">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            </a>
+                        </td>
+                        <td><%= i+1 %></td>
+                        <td><%= csc_card[i].chead %></td>
+                        <td><%= csc_card[i].subtitle %></td>
+                        <td><%= csc_card[i].card_disc1 %></td>
+                        <td><%= csc_card[i].card_disc2 %></td>
+                        <td><%= csc_card[i].curl %></td>
+                        
+                     </tr>
+                 <% } %>
+                </table>
+        </div>
+        <div class="col-md-12">
+            
+            <table class="table table-bordered table-hover table-striped text-dark">
+             <tr class="bg-success">
+                <th>Sr no.</th>
+                <th>doc1</th>
+                <th>doc2</th>
+                <th>doc3</th>
+                <th>doc4</th>
+                <th>doc5</th>
+                <th>doc6</th>
+                <th>Image</th>   
+             </tr>
+            
+            <% for(i=0;i<csc_card.length;i++) { %> 
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= csc_card[i].doc1 %></td>
+                    <td><%= csc_card[i].doc2 %></td>
+                    <td><%= csc_card[i].doc3 %></td>
+                    <td><%= csc_card[i].doc4 %></td>
+                    <td><%= csc_card[i].doc5 %></td>
+                    <td><%= csc_card[i].doc6 %></td>
+                    <td><img src="/uploads/<%= csc_card[i].csc_card_img %>" height="50px" width="100px"></td>
+                 </tr>
+             <% } %>
+            </table>
+    </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>     

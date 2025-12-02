@@ -1,0 +1,86 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Welcome About Disha </h1>
+        </div>
+    </div>
+</div>   
+
+<div class="container">
+    <div class="row mt-5 ">
+        <form action="/admin/savemabout_disha" method="post" enctype="multipart/form-data" >
+            <input type="hidden" name="mabout_disha_id" value="<%= m_data.mabout_disha_id %>" >
+        <div class="col-md-12 float-left">
+            <h4>Enter Details</h4>
+        </div>
+        <div class="col-md-6 mt-4 float-left">
+            <label>First Head</label>
+            <input type="text" value="<%= m_data.fhead %>"   name="fhead" class="form-control ">
+         </div>   
+            <div class="col-md-6 mt-4 float-left">
+            <label>Second Head</label>
+            <input type="text" value="<%= m_data.shead %>"      name="shead" class="form-control ">
+         </div>  
+         <div class="col-md-12 mt-4 float-left">
+            <label>Discription</label>
+            <textarea rows="2"  value=""     name="disc" class="form-control " ><%= m_data.disc %></textarea>
+         </div>
+        <div class="col-md-6 mt-4 float-left">
+            <label>Third Head</label>
+            <input type="text"  value="<%= m_data.thead %>"     name="thead" class="form-control ">
+         </div>
+         
+         <div class="col-md-6 mt-4 float-left">
+            <label>Point 1</label>
+            <input type="text"  value="<%= m_data.point1 %>"     name="point1" class="form-control ">
+         </div>
+           <div class="col-md-6 mt-4 float-left">
+            <label>Point 2</label>
+            <input type="text"  value="<%= m_data.point2 %>"     name="point2" class="form-control ">
+         </div>  
+         <div class="col-md-6 mt-4 float-left">
+            <label>Point 3 </label>
+            <input type="text"  value="<%= m_data.point3 %>"     name="point3" class="form-control ">
+         </div> 
+          <div class="col-md-6 mt-4 float-left">
+            <label>Point 4</label>
+            <input type="text"  value="<%= m_data.point4 %>"     name="point4" class="form-control ">
+         </div> 
+          <div class="col-md-6 mt-4 float-left">
+            <label>Point 5</label>
+            <input type="text" value="<%= m_data.point5 %>"      name="point5" class="form-control ">
+         </div> 
+          <div class="col-md-6 mt-4 float-left">
+            <label>Point 6</label>
+            <input type="text"  value="<%= m_data.point6 %>"     name="point6" class="form-control ">
+         </div> 
+          <div class="col-md-6 mt-4 float-left">
+            <label>Point 7</label>
+            <input type="text"  value="<%= m_data.point7 %>"     name="point7" class="form-control ">
+         </div> 
+          <div class="col-md-6 mt-4 float-left">
+            <label>Point 8</label>
+            <input type="text" value="<%= m_data.point8 %>"      name="point8" class="form-control ">
+         </div>
+        
+             <div class="col-md-6 mt-4 float-left">
+                <label>Select Image</label>
+                <input type="file"  accept="image/*" name="mabout_img" class="form-control ">
+             </div>
+             <div class="col-md-12 mt-4 float-left text-right">
+               <img src="/uploads/<%= m_data.mabout_img %>" height="100px" width="100px">
+            </div>
+             <div class="col-md-12 float-left text-center mt-4">
+                <button class="btn btn-primary" type="submit">Update</button>
+              </div>
+         
+            </form>
+    </div>
+</div>
+
+
+
+
+<%- include('footer.ejs') %>     
+

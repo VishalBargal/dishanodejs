@@ -1,0 +1,84 @@
+<%- include('nav.ejs') %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center bg-warning text-dark font-weight-bold shadow">Slider</h1>
+        </div>
+    </div>
+</div>  
+<div class="container">
+    <div class="row mt-4">
+        <form action="/admin/savecourse_slider" method="post" enctype="multipart/form-data">
+        <div class="col-md-4 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page First</h4>
+        </div>
+        <div class="col-md-4 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page Second</h4>
+        </div>
+        <div class="col-md-4 float-left text-center">
+            <h4 class="text-dark font-weight-bold">Page Third</h4>
+            <input type="hidden" value="<%= course_sli.course_slider_id %>" name="course_slider_id">
+        </div>
+        <div class="col-md-4 float-left text-center mt-4">
+          <img src="/uploads/<%= course_sli.cli_img1 %>" height="100px" width="100px" class="mr-3">
+          <label>Select Image</label>  
+          <input type="file" name="fsimg" accept="images/*" class="form-control" >
+        </div>
+        <div class="col-md-4 float-left text-center mt-4">
+          <img src="/uploads/<%= course_sli.cli_img2 %>" height="100px" width="100px" class="mr-3">
+            <label>Select Image</label>  
+            <input type="file" name="ssimg" accept="images/*" class="form-control" >
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+          <img src="/uploads/<%= course_sli.cli_img3 %>" height="100px" width="100px" class="mr-3">
+            <label>Select Image</label>  
+            <input type="file" name="tsimg" accept="images/*" class="form-control" >
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Sub-Title</label>  
+            <input type="text" value="<%= course_sli.fsubtitle %>" name="fsubtitle" class="form-control" required>
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Sub-Title</label>  
+            <input type="text" value="<%= course_sli.ssubtitle %>"  name="ssubtitle" class="form-control" required>
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Sub-Title</label>  
+            <input type="text" value="<%= course_sli.tsubtitle %>"  name="tsubtitle" class="form-control" required>
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" value="<%= course_sli.ftitle %>"  name="ftitle" class="form-control" required>
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" value="<%= course_sli.stitle %>"  name="stitle" class="form-control" required>
+          </div>
+          <div class="col-md-4 float-left text-center mt-4">
+            <label>Enter Title</label>  
+            <input type="text" value="<%= course_sli.ttitle %>"  name="ttitle" class="form-control" required>
+          </div>
+       
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter First Page Discription</label>  
+            <input type="text" value="<%= course_sli.fdisc %>"  name="fdisc" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter Second Page Discription</label>  
+            <input type="text" value="<%= course_sli.sdisc %>"  name="sdisc" class="form-control" required>
+          </div>
+          <div class="col-md-12 float-left text-center mt-4">
+            <label>Enter Third Page Discription</label>  
+            <input type="text" value="<%= course_sli.tdisc %>"  name="tdisc" class="form-control" required>
+          </div>
+          
+          <div class="col-md-12 float-left text-center mt-4">
+            <button class="btn btn-primary  ">Save Slider</button>
+          </div>
+    </form>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>     
+
+
